@@ -9,22 +9,26 @@
     font-weight: 400;
 }
 
-/*.header-container{*/
-/*}*/
+.header-container{
+    position: absolute;
+}
 
 .cards-container{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 45px;
+    position: relative;
+    width: 1280px;
+    height: 1200px;
+    margin: 0 auto;
 
 }
 
 .card-container {
     width: 340px;
     height: 573px;
-    margin: 100px;
     padding: 25px;
     /*padding-left: 25px;*/
     /*padding-right: 25px;*/
@@ -84,4 +88,9 @@
 .title{
     text-align: center;
     font-size: 60px;
+}
+
+.title-container{   
+    margin-bottom: 70px;
+    margin-top: 70px;
 }
