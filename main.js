@@ -46,14 +46,14 @@ outputLogButton.addEventListener('click', () => outputConsoleLog('ДЗ №4'))
 function outputConsoleLog(massege) {
     alert(massege)
     console.log(massege)
-}
+}п
 
 
 //Принаведении на заголовок выводится в консоль контент элемент
 
-const outputTitle = document.querySelector('#products-lists-title');
-const productsListsTitle = outputTitle.innerText
-    outputTitle.addEventListener('mouseenter', () => outputConsoleLog(productsListsTitle))
+const title = document.querySelector('#product-list-title');
+const productListTitle = title.innerText
+title.addEventListener('mouseenter', () => outputConsoleLog(productListTitle))
  
 
 //Кнопка меняет цвет с одного на другой  
@@ -63,12 +63,11 @@ const blueButton = '#00f7ffff'
 const yellowButton = '#eeff00ff'
 
 buttonChangeColor.addEventListener('click', () => {
-    if(buttonChangeColor.classList.toggle('yellowButton')) { 
+    if (buttonChangeColor.classList.toggle('yellowButton')) { 
         buttonChangeColor.style.backgroundColor = yellowButton;
     } else {
         buttonChangeColor.classList.toggle('blueButton')
         buttonChangeColor.style.backgroundColor = blueButton;
     }
-    //(buttonChangeColor.classList.toggle('yellowButton')) ? (buttonChangeColor.style.backgroundColor = yellowButton) : (buttonChangeColor.classList.toggle('blueButton'), buttonChangeColor.style.backgroundColor = blueButton)
 })
 
