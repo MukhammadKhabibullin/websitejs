@@ -46,7 +46,7 @@ outputLogButton.addEventListener('click', () => outputConsoleLog('ДЗ №4'))
 function outputConsoleLog(massege) {
     alert(massege)
     console.log(massege)
-}п
+}
 
 
 //Принаведении на заголовок выводится в консоль контент элемент
