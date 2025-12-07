@@ -1,17 +1,16 @@
 //1
 
-function countryTemperature (country, temperature) {
+function searchTemperature(country, temperature) {
     console.log(`Сейчаc в ${country} градусов по Цельсию ${temperature}`)
 }
- countryTemperature("moscow", 15)
+searchTemperature("moscow", 15)
 
 
 //2
 
- let soundSpeed;
- soundSpeed = 343;
+ const soundSpeed = 343;
 
- function learnSpeed (speed) {
+ function learnSpeed(speed) {
     if (speed > soundSpeed) {
         console.log('Сверхзвуковая скорость')
     } else if (speed < soundSpeed) {
@@ -29,7 +28,7 @@ learnSpeed(343)
 const product = "Apple"
 const price = 200
 
-function checkBudget (budget) {
+function buyProduct(budget) {
     if (price <= budget) {
         console.log(`${product} приобретен. Спасибо за покупку!`)
     } else {
@@ -38,4 +37,4 @@ function checkBudget (budget) {
     }
 }
 
-checkBudget(190)
+buyProduct(190)
