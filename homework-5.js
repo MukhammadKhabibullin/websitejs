@@ -1,26 +1,26 @@
 //1
 
-function searchTemperature(country, temperature) {
+function displayTemperature(country, temperature) {
     console.log(`Сейчаc в ${country} градусов по Цельсию ${temperature}`)
 }
-searchTemperature("moscow", 15)
+displayTemperature("moscow", 15)
 
 
 //2
 
- const soundSpeed = 343;
+ const SOUNDSPEED = 343;
 
- function learnSpeed(speed) {
-    if (speed > soundSpeed) {
+ function compareSpeed(speed) {
+    if (speed > SOUNDSPEED) {
         console.log('Сверхзвуковая скорость')
-    } else if (speed < soundSpeed) {
+    } else if (speed < SOUNDSPEED) {
         console.log('Дозвуковая скорость')
     } else {
         console.log('Скорость звука')
     }
  }
 
-learnSpeed(343) 
+compareSpeed(343) 
 
 
 //3
