@@ -8,10 +8,10 @@ displayTemperature("moscow", 15)
 
 //2
 
- const SOUNDSPEED = 343;
+ const SOUND_SPEED = 343;
 
  function compareSpeed(speed) {
-    if (speed > SOUNDSPEED) {
+    if (speed > SOUND_SPEED) {
         console.log('Сверхзвуковая скорость')
     } else if (speed < SOUNDSPEED) {
         console.log('Дозвуковая скорость')
