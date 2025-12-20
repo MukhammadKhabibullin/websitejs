@@ -21,7 +21,6 @@ const car = {
     yearOfManufacture: "2023",
     color: "белый",
     typeOfBox: "автомат",
-    owner: ""
 }
 
 car.owner = profil
@@ -31,7 +30,7 @@ console.log(car)
 
 //5
 
-function checkProperties (obj) {
+function checkProperties(obj) {
     if (!obj.hasOwnProperty('максимальная скорость')){
         obj ['максимальная скорость'] = 220;
         console.log('добавлено');
@@ -45,13 +44,13 @@ checkProperties(car)
 
 //6
 
-function showMeaning (obj, propertyName) {
-    const j = obj[propertyName];
-    console.log(j);
+function showValue(obj, propertyName) {
+    const name = obj[propertyName];
+    console.log(name);
     
 }
 
-showMeaning(profil, "name")
+showValue(profil, "name")
 
 
 //7
@@ -188,17 +187,19 @@ const harryPotter = [
 
 console.log(harryPotter)
 
-const newBooks = [...books, ...harryPotter];
 
-console.log(newBooks)
+const combinedCatalog = [...books, ...harryPotter];
+
+console.log(combinedCatalog)
 
 
-const rareBook = harryPotter.map(function (book){
-    if (book.year < 2000) {
-        console.log('редкий')
-    }   else {
-        console.log('не редкий')
-    }
+function markRareBooks (bookArray) {
+    const updatedCatalog = bookArray.map((book) => {
+        return { ...book, isRare: book.year > 2000}
+    })
+    return updatedCatalog
 }
 
-)
+const finalCatalogWithRatity = markRareBooks(combinedCatalog)
+
+console.log(finalCatalogWithRatity)
