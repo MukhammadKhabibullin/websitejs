@@ -3,7 +3,10 @@ import { user } from "./comments.js";
 //2 Создал массив чисел и отфильтровал его
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const filteredNumbers = numbers.filter(num => num >= 5);
+
+const filteredNumbers = ((num) => {
+    return num.filter(num => num >= 5)
+})(numbers);
 
 console.log(filteredNumbers)
 
@@ -47,12 +50,12 @@ console.log(mapUsersToPostIds);
 
 //9 Перебрал массив что бы объекты состояли только из айди и имени
 
-const id = user.map(item => ({
+const extractIdAndName = user.map(item => ({
     id: item.id,
     name: item.name
 }));
 
-console.log(id);
+console.log(extractIdAndName);
 
 
 //10 Перебрал массив и добавил объектам свойство 
