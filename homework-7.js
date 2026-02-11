@@ -13,24 +13,24 @@ console.log(result);
 
 //3 Создал массив строк и проверил есть ли в массиве какая-то определенная сущность.
 
-const flat = ['Шкаф', 'Стул', 'Стол', 'Кровать', 'Диван'];
+const furnitureItems = ['Шкаф', 'Стул', 'Стол', 'Кровать', 'Диван'];
 
-const entityFlat = flat.filter(function (flat) {
-    return flat.startsWith("С");
+const itemsStartingWithC = furnitureItems.filter(function (furnitureItems) {
+    return furnitureItems.startsWith("С");
 })
 
-console.log(flat);
-console.log(entityFlat);
+console.log(furnitureItems);
+console.log(itemsStartingWithC);
 
 
 //4 Наисал функцию которая принимает массив и изменяет его
 
-const one = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const setNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const two = one.toReversed()
+const reversedNumbers = setNumbers.toReversed();
 
-console.log(one);
-console.log(two);
+console.log(setNumbers);
+console.log(reversedNumbers);
 
 
 //7 Вывел в консоль массив
@@ -41,11 +41,11 @@ console.log(filterCommentsByEmail);
 
 //8 Перебрал массив
 
-const PostId = user.map((comment) => {
+const postId = user.map((comment) => {
     return ({...comment, postId: comment.id <= 5 ? 2 : 1});
 });
 
-console.log(PostId);
+console.log(postId);
 
 
 //9 Перебрал массив что бы объекты состояли только из айди и имени
@@ -60,34 +60,34 @@ console.log(id);
 
 //10 Перебрал массив и добавил объектам свойство 
 
-const lengthBody = user.map(item => ({
+const validateBodyLength = user.map(item => ({
   ...item,
   isInvalid: item.body.length > 180
 }));
 
-console.log(lengthBody);
+console.log(validateBodyLength);
 
 
 //11 Вывел массив
 
-const withdrawEmail = user.reduce((acc, user) => {
+const extractEmailsWithReduce = user.reduce((acc, user) => {
     acc.push(user.name);
     return acc;
 }, []);
 
-console.log(withdrawEmail);
+console.log(extractEmailsWithReduce);
 
 
-const withdrawEmails = user.map(user => user.withdrawEmail);
+const extractEmailsWithMap = user.map(user => user.extractEmailsWithReduce);
 
-console.log(withdrawEmails);
+console.log(extractEmailsWithMap);
 
 
 //12 Переьрал массив
 
-let bringString = withdrawEmail.toString();
-console.log(bringString);
+let arrayToString = extractEmailsWithReduce.toString();
+console.log(arrayToString);
 
 
-let bringStringJoin = withdrawEmail.join();
-console.log(bringStringJoin);
+let arrayJoin = extractEmailsWithReduce.join();
+console.log(arrayJoin);
