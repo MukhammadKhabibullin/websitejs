@@ -3,11 +3,9 @@ import { user } from "./comments.js";
 //2 Создал массив чисел и отфильтровал его
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const filteredNumbers = numbers.filter(num => num >= 5);
 
-const result = numbers.slice(4);
-
-console.log(numbers);
-console.log(result);
+console.log(filteredNumbers)
 
 
 //3 Создал массив строк и проверил есть ли в массиве какая-то определенная сущность.
@@ -40,11 +38,11 @@ console.log(filterCommentsByEmail);
 
 //8 Перебрал массив
 
-const postId = user.map((comment) => {
-    return ({...comment, postId: comment.id <= 5 ? 2 : 1});
+const mapUsersToPostIds = user.map((comment) => {
+    return ({...comment, mapUsersToPostIds: comment.id <= 5 ? 2 : 1});
 });
 
-console.log(postId);
+console.log(mapUsersToPostIds);
 
 
 //9 Перебрал массив что бы объекты состояли только из айди и имени
@@ -59,12 +57,12 @@ console.log(id);
 
 //10 Перебрал массив и добавил объектам свойство 
 
-const validateBodyLength = user.map(item => ({
+const validMarkedUsers = user.map(item => ({
   ...item,
   isInvalid: item.body.length > 180
 }));
 
-console.log(validateBodyLength);
+console.log(validMarkedUsers);
 
 
 //11 Вывел массив
