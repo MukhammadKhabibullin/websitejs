@@ -1,6 +1,5 @@
 import { user } from "./comments.js";
 
-
 //2 Создал массив чисел и отфильтровал его
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
