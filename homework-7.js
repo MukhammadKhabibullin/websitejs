@@ -5,19 +5,17 @@ import { user } from "./comments.js";
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const filteredNumbers = ((num) => {
-    return num.filter(num => num >= 5)
+    return num.filter(num => num >= 5);
 })(numbers);
 
-console.log(filteredNumbers)
+console.log(filteredNumbers);
 
 
 //3 Создал массив строк и проверил есть ли в массиве какая-то определенная сущность.
 
 const furnitureItems = ['Шкаф', 'Стул', 'Стол', 'Кровать', 'Диван'];
 
-const itemsStartingWithC = furnitureItems.filter(function (furnitureItems) {
-    return furnitureItems.startsWith("С");
-})
+const itemsStartingWithC = furnitureItems.filter(name => name.startsWith("С"));
 
 console.log(furnitureItems);
 console.log(itemsStartingWithC);
@@ -35,7 +33,7 @@ console.log(reversedNumbers);
 
 //7 Вывел в консоль массив
 
-const filterCommentsByEmail = user.filter(user => user.email.includes('.com'))
+const filterCommentsByEmail = user.filter(user => user.email.includes('.com'));
 console.log(filterCommentsByEmail);
 
 
