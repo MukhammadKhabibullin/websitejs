@@ -21,7 +21,7 @@ const promptCardAmount = +prompt('Сколько карточек отобраз
 
 function getCardsCountFromUser(countCard, products) {
     if (countCard >=1 && countCard <= 5){
-        const selectedProducts = products.slice(0, countCard)
+        const selectedProducts = products.slice(0, countCard);
         return selectedProducts;
     }   else {
         alert("Неверное число! Введите от 1 до 5.");
@@ -34,7 +34,6 @@ function renderCards(products) {
     products.forEach(cards => {
     const cardClone = cardTemplate.content.cloneNode(true);
     cardClone.querySelector('.picture').src = `images/${cards.image}.png`;
-    cardClone.querySelector('.product-category').textContent = cards.category;
     cardClone.querySelector('.product-name').textContent = cards.name;
     cardClone.querySelector('.product-description').textContent = cards.description;
     cardClone.querySelector('.product-compound').innerHTML = cards.structure.map(item => `<li>${item}</li>`).join("");
@@ -43,8 +42,8 @@ function renderCards(products) {
     });
 };
 
-const selectedProducts = getCardsCountFromUser(promptCardAmount,card);
+const selectedProducts = getCardsCountFromUser(promptCardAmount, card);
 
 if (selectedProducts) {
-    renderCards(selectedProducts)
-}
+    renderCards(selectedProducts);
+};
