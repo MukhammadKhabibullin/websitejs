@@ -10,7 +10,7 @@ const cardsContainer = document.querySelector('.cards-container');
 const productDescription = card.reduce((acc, description) => {
     acc[description.name] = description.description;
     return acc;
-}, {});
+}, []);
 
 console.log(productDescription);
 
@@ -41,7 +41,6 @@ function renderCards(products) {
     cardsContainer.appendChild(cardClone);
     });
 };
-
 const selectedProducts = getCardsCountFromUser(promptCardAmount, card);
 
 if (selectedProducts) {
