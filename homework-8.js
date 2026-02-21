@@ -1,4 +1,4 @@
-import {card} from "./cards.js";
+import {cards} from "./cards.js";
 
 //3 Создал и реализовал шаблон для продуктовых карточек
 
@@ -7,7 +7,7 @@ const cardsContainer = document.querySelector('.cards-container');
 
 //4 Получил массив объектов
 
-const productDescription = card.reduce((acc, description) => {
+const productDescription = cards.reduce((acc, description) => {
     acc[description.name] = description.description;
     return acc;
 }, []);
@@ -41,7 +41,7 @@ function renderCards(products) {
     cardsContainer.appendChild(cardClone);
     });
 };
-const selectedProducts = getCardsCountFromUser(promptCardAmount, card);
+const selectedProducts = getCardsCountFromUser(promptCardAmount, cards);
 
 if (selectedProducts) {
     renderCards(selectedProducts);

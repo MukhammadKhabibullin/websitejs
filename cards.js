@@ -1,4 +1,4 @@
-export const card = [
+export const cards = [
     {
         image: "muss",
         name: "Увлажняющий мусс",
