@@ -105,3 +105,140 @@
     line-height: 24px;
 }
 
+ .footer {
+    width: auto;
+    height: 477px;
+    background: #3A3A3A;
+    display: grid;
+    place-items: center;
+    color: #FFFFFF;
+    gap: 162px;
+}
+
+.footer-wrapper {
+    width: 1569px;
+    height: 147px;
+    padding-top: 85px;
+    border-radius: 10px;
+    border: 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-wrapper-left {
+    display: grid;
+    gap: 16px;
+}
+
+.name-product-cards {
+    font-weight: bold;
+    font-size: 28px;
+    color: #FFFFFF;
+}
+
+.footer-wrapper-left-text {
+    font-size: 18px;
+}
+
+.footer-wrapper-left-social {
+    padding-top: 42px;
+}
+
+.social-icon-vk {
+    width: 24px;
+    height: 14px;
+
+}
+
+.social-icon-telegram {
+    width: 21px;
+    height: 18px;
+    margin-right: 30px;
+}
+
+li a {
+    text-decoration: none;
+}
+
+.footer-wrapper-raight ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-wrapper-raight-title {
+    font-size: 20px;
+    padding-bottom: 23px;
+    color: #FFFFFF;
+}
+
+.footer-text {
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.footer-wrapper-raight li {
+    padding-bottom: 17px;
+}
+
+.footer-wrapper-subscribe-form {
+    width: 477px;
+    height: 103px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 373px;
+    padding-left: 132px;
+}
+
+.footer-wrapper-center-text {
+    margin-left: 24px;
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 13px;
+    color: #FFFFFF;
+}
+
+.footer-input-container {
+    width: 477px;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.footer-input-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 10px;
+    color: #000000 75%;
+    margin-left: 26px;
+}
+
+.footer-input-container button {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    padding: 1px 21px;
+    cursor: pointer;
+    color: #000000;
+    border-left: 2px solid #bfbfbf;
+}
+
+.footer-line {
+    width:66px;
+    height:1px;
+    background:#FFFFFF;
+    margin:0 auto 25px auto;
+    border-radius:2px;
+}
+
+.footer-lower-name {
+    font-size:18px;
+    letter-spacing:0.5px;
+    color: #FFFFFF;
+}
