@@ -116,7 +116,7 @@
 }
 
 .footer-wrapper {
-    width: 1569px;
+    width: auto;
     height: 147px;
     padding-top: 85px;
     border-radius: 10px;
@@ -181,7 +181,7 @@ li a {
 }
 
 .footer-wrapper-subscribe-form {
-    width: 477px;
+    width: auto;
     height: 103px;
     display: flex;
     justify-content: center;
@@ -200,7 +200,7 @@ li a {
 }
 
 .footer-input-container {
-    width: 477px;
+    width: auto;
     height: 61px;
     display: flex;
     align-items: center;
