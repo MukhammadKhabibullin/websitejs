@@ -230,15 +230,103 @@ li a {
 }
 
 .footer-line {
-    width:66px;
-    height:1px;
-    background:#FFFFFF;
-    margin:0 auto 25px auto;
-    border-radius:2px;
+    width: 66px;
+    height: 1px;
+    background: #FFFFFF;
+    margin: 0 auto 25px auto;
+    border-radius: 2px;
 }
 
 .footer-lower-name {
-    font-size:18px;
-    letter-spacing:0.5px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
     color: #FFFFFF;
+}
+
+ .modal {
+    display: none;            
+} 
+
+.modal-showed {
+    display: block;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.modal-close{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px; 
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s; 
+} 
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #FFFFFF;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    height: 570px;
+}
+
+.modal-registration-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-form-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: purple;
+    margin-bottom: 2px;
+}
+
+.registration-form-input {
+    width: 300px;
+    height: 35px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px - solid #118d7e;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+.input-error {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.1);
+}
+
+.button-registration:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
