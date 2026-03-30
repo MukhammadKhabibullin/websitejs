@@ -261,7 +261,7 @@ li a {
     z-index: 10;
 }
 
-.modal-close{
+.modal-close {
     position: absolute;
     top: 15px;
     right: 20px;

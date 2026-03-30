@@ -1,15 +1,12 @@
 //4
-document.addEventListener('DOMContentLoaded', () => {
-    
-    const form = document.getElementById('subscribe-form');
+ document.addEventListener('DOMContentLoaded', () => {});
+
+        
+    const formSubscribe = document.getElementById('subscribe-form');
     const emailInput = document.getElementById('email');
 
-    if (!form || !emailInput) {
-        console.error('Форма или поле email не найдены');
-        return;
-    }
 
-    form.addEventListener('submit', (event) => {
+    formSubscribe.addEventListener('submit', (event) => {
         event.preventDefault();        
 
         const emailValue = emailInput.value.trim();
@@ -29,8 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         emailInput.value = '';
     });
-});
-
 
 //5
 
@@ -136,10 +131,8 @@ function validateForm() {
 openButtonModul.addEventListener('click', () => {
     modal.classList.add('modal-showed');
     form.reset();                    
-    buttonRegistration.disabled = true;
 });
 
-form.addEventListener('input', validateForm);
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -148,9 +141,10 @@ form.addEventListener('submit', (e) => {
         console.log('Форма успешно прошла валидацию!');
         
         modal.classList.remove('modal-showed');
-    }
 
     setTimeout(() => {
             modal.classList.remove('modal-showed');
         }, 500);
+    }
+
 });
