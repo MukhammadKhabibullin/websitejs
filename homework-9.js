@@ -1,7 +1,5 @@
 //4
  document.addEventListener('DOMContentLoaded', () => {
-
-        
     const formSubscribe = document.getElementById('subscribe-form');
     const emailInput = document.getElementById('email');
 
@@ -30,7 +28,7 @@
 
 //5
 
-const openButtonModul = document.getElementById('openModal');
+const openButtonModal = document.getElementById('openModal');
 const modal = document.querySelector('.modal');
 const closeModal = document.querySelector('.modal-close');
 const buttonRegistration = document.querySelector('.button-registration');
@@ -39,7 +37,7 @@ const overlay = document.querySelector('.overlay')
 
 
 
-openButtonModul.addEventListener ('click', () => {
+openButtonModal.addEventListener ('click', () => {
     modal.classList.add('modal-showed');
 })
 
@@ -47,16 +45,7 @@ closeModal.addEventListener ('click', () => {
     modal.classList.remove('modal-showed');
 })
 
-// overlay.addEventListener('click', (e) => {
-//     if (e.target === overlay) {
-//         modal.classList.remove('modal-showed');
-//     }
-// });
-overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) {
-        modal.classList.remove('modal-showed');
-    }
-});
+overlay.addEventListener('click', (e) => {});
 
 function showError(input, message) {
     const formGroup = input.parentElement;
@@ -141,7 +130,7 @@ function validateForm() {
     return isValid;
 }
 
-openButtonModul.addEventListener('click', () => {
+openButtonModal.addEventListener('click', () => {
     modal.classList.add('modal-showed');
     form.reset();                    
 });
