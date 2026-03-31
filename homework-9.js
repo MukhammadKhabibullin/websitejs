@@ -45,7 +45,9 @@ closeModal.addEventListener ('click', () => {
     modal.classList.remove('modal-showed');
 })
 
-overlay.addEventListener('click', (e) => {});
+overlay.addEventListener('click', () => {
+    modal.classList.remove('modal-showed');
+});
 
 function showError(input, message) {
     const formGroup = input.parentElement;
