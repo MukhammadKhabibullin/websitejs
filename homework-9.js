@@ -1,5 +1,5 @@
 //4
- document.addEventListener('DOMContentLoaded', () => {});
+ document.addEventListener('DOMContentLoaded', () => {
 
         
     const formSubscribe = document.getElementById('subscribe-form');
@@ -26,24 +26,30 @@
 
         emailInput.value = '';
     });
-
+ });
+ 
 //5
 
 const openButtonModul = document.getElementById('openModal');
 const modal = document.querySelector('.modal');
-const closeModal = document.querySelector('.modal-close')
-const buttonRegistration = document.querySelector('.button-registration')
+const closeModal = document.querySelector('.modal-close');
+const buttonRegistration = document.querySelector('.button-registration');
 const form = document.querySelector('.modal-content');
+const overlay = document.querySelector('.modal')
 
 
 
 openButtonModul.addEventListener ('click', () => {
-    modal.classList.add('modal-showed')
+    modal.classList.add('modal-showed');
 })
 
 closeModal.addEventListener ('click', () => {
-    modal.classList.remove('modal-showed')
+    modal.classList.remove('modal-showed');
 })
+
+overlay.addEventListener('click', () => {
+    modal.classList.remove('modal-showed');
+});
 
 function showError(input, message) {
     const formGroup = input.parentElement;
