@@ -27,7 +27,7 @@
         emailInput.value = '';
     });
  });
- 
+
 //5
 
 const openButtonModul = document.getElementById('openModal');
@@ -35,7 +35,7 @@ const modal = document.querySelector('.modal');
 const closeModal = document.querySelector('.modal-close');
 const buttonRegistration = document.querySelector('.button-registration');
 const form = document.querySelector('.modal-content');
-const overlay = document.querySelector('.modal')
+const overlay = document.querySelector('.overlay')
 
 
 
@@ -47,8 +47,15 @@ closeModal.addEventListener ('click', () => {
     modal.classList.remove('modal-showed');
 })
 
-overlay.addEventListener('click', () => {
-    modal.classList.remove('modal-showed');
+// overlay.addEventListener('click', (e) => {
+//     if (e.target === overlay) {
+//         modal.classList.remove('modal-showed');
+//     }
+// });
+overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+        modal.classList.remove('modal-showed');
+    }
 });
 
 function showError(input, message) {
