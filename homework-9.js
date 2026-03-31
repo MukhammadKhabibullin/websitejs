@@ -28,7 +28,7 @@
 
 //5
 
-const openButtonModal = document.getElementById('openModal');
+const openModalButton = document.getElementById('openModal');
 const modal = document.querySelector('.modal');
 const closeModal = document.querySelector('.modal-close');
 const buttonRegistration = document.querySelector('.button-registration');
@@ -37,7 +37,7 @@ const overlay = document.querySelector('.overlay')
 
 
 
-openButtonModal.addEventListener ('click', () => {
+openModalButton.addEventListener ('click', () => {
     modal.classList.add('modal-showed');
 })
 
@@ -132,7 +132,7 @@ function validateForm() {
     return isValid;
 }
 
-openButtonModal.addEventListener('click', () => {
+openModalButton.addEventListener('click', () => {
     modal.classList.add('modal-showed');
     form.reset();                    
 });
