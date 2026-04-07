@@ -10,7 +10,7 @@ export class Form {
     };
 
     isValid() {
-        return this.formElement.checkVisibility();
+        return this.formElement.checkValidity();
     };
 
     reset() {
