@@ -23,9 +23,9 @@ export default class Drink  {
         console.log(`Начинаем готовить ${this.name}...`)
     }
 
-    sell() {
+    serve() {
         this.#prepare();
-        console(`Ваш ${this.name} готов`);
+        console.log(`Ваш ${this.name} готов`);
     }
 }
 

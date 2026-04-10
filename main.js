@@ -9,7 +9,7 @@ import { PhoneBudget } from './phone.js';
 import Cafe from './cafe.js';
 import Coffee from './coffee.js';
 import Tea from './tea.js';
-import Lemanade from './lemonade.js';
+import Lemonade from './lemonade.js';
 
 
 const nameCafe = new Cafe("Чайхана", "г.Ульяновск, ул.Мухаммада 1 ");
@@ -21,7 +21,7 @@ const green = new Tea("Чай зеленый", "Средний", "70 \u20BD", 70
 const black = new Tea("Чай черный", "Средний", "85 \u20BD", 70, "Цельнолистовой");
 const fruct = new Tea("Чай фруктовый", "Большой", "95 \u20BD", 70, "Ройбуш");
 
-const lem = new Lemanade("Мохито", "Большой", "70 \u20BD", 15, "Клубника");
+const lem = new Lemonade("Мохито", "Большой", "70 \u20BD", 15, "Клубника");
 
 
 
