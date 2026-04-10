@@ -11,6 +11,12 @@ export default class Cafe {
     }
 
     order(drink) {
+
+        if (!(drink instanceof Drink)) {
+            console.log("Ошибка: можно заказывать только напитки!");
+            return;
+        }
+        
         console.log(`Заказ принят: ${drink.name}`);
         drink.serve();
         console.log(`Ваш напиток ${drink.name}`);
