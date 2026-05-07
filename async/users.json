@@ -4,28 +4,28 @@
       "id": 1,
       "name": "Иван",
       "surname": "Иванов",
-      "email": "ivan@example.com",
+      "email": "ivan.ivanov@mail.ru",
       "age": 28
     },
     {
       "id": 2,
       "name": "Мария",
       "surname": "Петрова",
-      "email": "maria@example.com",
+      "email": "maria.petrovna@mail.ru",
       "age": 24
     },
     {
       "id": 3,
       "name": "Алексей",
       "surname": "Сидоров",
-      "email": "alex@example.com",
+      "email": "alex.sidorov@mail.ru",
       "age": 35
     },
     {
       "id": 4,
       "name": "Анна",
       "surname": "Смирнова",
-      "email": "anna@example.com",
+      "email": "anna.smirnova@mail.ru",
       "age": 29
     }
   ]
