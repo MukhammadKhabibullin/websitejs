@@ -1,0 +1,120 @@
+const statusEl = document.getElementById('status');
+const cardsContainer = document.getElementById('cardsContainer');
+const STORAGE_KEY = 'usersData';
+
+function showStatus(message, isError = false) {
+    statusEl.textContent = message;
+    statusEl.style.background = isError ? '#fee' : '#e8f8e8';
+    statusEl.style.color = isError ? '#c33' : '#2e8b2e';
+}
+
+function saveUsers(users) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
+}
+
+function getUsersFromStorage() {
+    const data = localStorage.getItem(STORAGE_KEY);
+    return data ? JSON.parse(data) : null;
+}
+
+function renderCards(users) {
+    cardsContainer.innerHTML = '';
+
+    if (!users || users.length === 0) {
+        cardsContainer.innerHTML = `
+            <p style="grid-column: 1/-1; text-align:center; font-size:1.2rem; color:#666;">
+                Список пользователей пуст
+            </p>`;
+        return;
+    }
+
+    users.forEach(user => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <h3>${user.name} ${user.surname}</h3>
+            <p><strong>Email:</strong> ${user.email}</p>
+            <p><strong>Возраст:</strong> ${user.age}</p>
+            <p><strong>Телефон:</strong> ${user.phone || '—'}</p>
+            <button class="btn btn-delete" data-id="${user.id}">Удалить</button>
+        `;
+        cardsContainer.appendChild(card);
+    });
+}
+
+function deleteUser(userId) {
+    const users = getUsersFromStorage();
+    if (!users) return;
+
+    const filteredUsers = users.filter(user => user.id !== userId);
+    
+    saveUsers(filteredUsers);
+    renderCards(filteredUsers);
+    showStatus(`Пользователь удалён`, false);
+}
+
+function deleteAllUsers() {
+    if (confirm('Удалить всех пользователей?')) {
+        localStorage.removeItem(STORAGE_KEY);
+        renderCards([]);
+        showStatus('Все пользователи удалены', false);
+    }
+}
+
+async function loadUsers() {
+    const usersFromStorage = getUsersFromStorage();
+
+    if (usersFromStorage) {
+        showStatus('Данные загружены из памяти', false);
+        renderCards(usersFromStorage);
+        return;
+    }
+
+    showStatus('Данные загружаются...');
+
+    try {
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        const response = await fetch('users.json'); 
+
+        if (!response.ok) {
+            throw new Error(`Файл не найден (статус ${response.status})`);
+        }
+
+        const data = await response.json();
+        const users = data.users || [];
+
+        if (users.length === 0) throw new Error('Нет пользователей');
+
+        saveUsers(users);
+        showStatus(`Загружено ${users.length} пользователей`, false);
+        renderCards(users);
+
+    } catch (error) {
+        console.error(error);
+        showStatus('Ошибка: файл users.json не найден.<br>Проверьте, лежит ли он в той же папке.', true);
+    }
+}
+
+function init() {
+    loadUsers();   
+
+    document.getElementById('loadBtn').addEventListener('click', loadUsers);
+
+    document.getElementById('deleteAllBtn').addEventListener('click', deleteAllUsers);
+
+    document.getElementById('getAllBtn').addEventListener('click', () => {
+        const users = getUsersFromStorage();
+        const count = users ? users.length : 0;
+        showStatus(`Сейчас на странице ${count} пользователей`, false);
+    });
+
+    cardsContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-delete')) {
+            const id = Number(e.target.dataset.id);
+            deleteUser(id);
+        }
+    });
+}
+
+init();
