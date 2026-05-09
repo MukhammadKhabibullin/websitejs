@@ -1,5 +1,5 @@
 const statusEl = document.getElementById('status');
-const cardsContainer = document.getElementById('cardsContainer');
+const cardsContainer = document.getElementById('cards-container');
 const STORAGE_KEY = 'usersData';
 
 function showStatus(message, isError = false) {
@@ -31,13 +31,19 @@ function renderCards(users) {
     users.forEach(user => {
         const card = document.createElement('div');
         card.className = 'card';
+        
         card.innerHTML = `
             <h3>${user.name} ${user.surname}</h3>
             <p><strong>Email:</strong> ${user.email}</p>
             <p><strong>Возраст:</strong> ${user.age}</p>
-            <p><strong>Телефон:</strong> ${user.phone || '—'}</p>
             <button class="btn btn-delete" data-id="${user.id}">Удалить</button>
         `;
+
+        const deleteBtn = card.querySelector('.btn-delete');
+        deleteBtn.addEventListener('click', () => {
+            deleteUser(user.id);
+        });
+
         cardsContainer.appendChild(card);
     });
 }
@@ -99,22 +105,11 @@ async function loadUsers() {
 function init() {
     loadUsers();   
 
-    document.getElementById('loadBtn').addEventListener('click', loadUsers);
+    document.getElementById('load-btn').addEventListener('click', loadUsers);
 
-    document.getElementById('deleteAllBtn').addEventListener('click', deleteAllUsers);
+    document.getElementById('delete-all-btn').addEventListener('click', deleteAllUsers);
 
-    document.getElementById('getAllBtn').addEventListener('click', () => {
-        const users = getUsersFromStorage();
-        const count = users ? users.length : 0;
-        showStatus(`Сейчас на странице ${count} пользователей`, false);
-    });
-
-    cardsContainer.addEventListener('click', (e) => {
-        if (e.target.classList.contains('btn-delete')) {
-            const id = Number(e.target.dataset.id);
-            deleteUser(id);
-        }
-    });
+    document.getElementById('get-all-btn').addEventListener('click', fetchAllUsers);
 }
 
 init();
