@@ -102,13 +102,44 @@ async function loadUsers() {
     }
 }
 
+async function fetchAllUsers() {
+    showStatus('Загрузка пользователей с сервера...');
+    
+    try {
+        await new Promise(resolve => setTimeout(resolve, 800));
+
+        const response = await fetch('users.json', { 
+            cache: 'no-store' 
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ошибка! Статус: ${response.status}`);
+        }
+
+        const data = await response.json();
+        const users = data.users || data;   
+
+        if (!users || users.length === 0) {
+            throw new Error('В файле нет пользователей');
+        }
+
+        saveUsers(users);
+        renderCards(users);
+        showStatus(`Успешно загружено ${users.length} пользователей`, false);
+
+    } catch (error) {
+        console.error(error);
+        showStatus(`Ошибка загрузки: ${error.message}<br>Убедитесь, что файл <b>users.json</b> находится в той же папке.`, true);
+    }
+}
+
 function init() {
-    loadUsers();   
+    loadUsers();  
 
     document.getElementById('load-btn').addEventListener('click', loadUsers);
-
+    
     document.getElementById('delete-all-btn').addEventListener('click', deleteAllUsers);
-
+    
     document.getElementById('get-all-btn').addEventListener('click', fetchAllUsers);
 }
 
